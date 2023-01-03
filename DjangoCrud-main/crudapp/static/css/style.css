@@ -1,0 +1,28 @@
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 35%;
+    padding: 50px;
+    background-color: whitesmoke;
+    border-radius: 10px;
+}
+.row{
+    padding: 10px 0px 20px 0px;
+}
+.col-6, .col-3{
+    padding: 10px 0px 10px 0px;
+}
+.container h1{
+    margin-bottom: 30px;
+}
+#form-container{
+    display: flex;
+}
