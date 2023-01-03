@@ -37,6 +37,7 @@ function  getTodos(){
             let listContainer = `
             <div class = 'wrapper'>
             <div class = 'wrapperText'><p>${d.title}</p></div>
+            <div class = 'wrapperText'><p>${d.dateTime}</p></div>
                 <div class = 'iconsContainer'>
                     <div class = 'editbtn' data-id = ${d.id} ><i class="fas fa-pen-alt"></i></div>
                     <div class = 'delbtn' data-id = ${d.id}><i class="fas fa-trash"></i></div> 
@@ -83,7 +84,8 @@ getTodos()
     form.addEventListener('submit', function(e){
         e.preventDefault()
         let item = document.getElementById('textInput').value
-        console.log(item)
+        let datetime = document.getElementById('birthdaytime').value
+        console.log(datetime)
         let url = 'http://127.0.0.1:8000/api/create-todo'
         if(indicator == 1){
             url = `http://127.0.0.1:8000/api/update-todo/${item_id}`
@@ -91,7 +93,7 @@ getTodos()
         
         
         
-        let newItem = {title: item }
+        let newItem = {title: item, dateTime: datetime }
         fetch(url, {
             method: 'POST',
             headers: {
